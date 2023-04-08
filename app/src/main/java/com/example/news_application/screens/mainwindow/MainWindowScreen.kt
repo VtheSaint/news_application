@@ -11,7 +11,7 @@ fun MainWindowScreen(
     navController: NavController,
     viewModel: MainWindowViewModel
 ) {
-    val viewState = viewModel.mainWindowViewState.observeAsState(initial = MainWindowViewState.MainWindowViewStateInitial())
+    val viewState = viewModel.mainWindowViewState.observeAsState(initial = viewModel.getNews())
     when (val state = viewState.value) {
         is MainWindowViewState.MainWindowViewStateInitial -> MainWindowScreenInitial(
             state = state,
